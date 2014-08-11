@@ -10,7 +10,7 @@ excel = '/Users/gricelab/Documents/Joseph/mapping_file_conversion/Excel/MiSeq_'
 gen = '/Users/gricelab/Documents/Joseph/mapping_file_conversion/Generated/MiSeq_'
 txt = '.txt'
 run = 'MiSeq_'
-colhds = '#SampleID	BarcodeSequence	LinkerPrimerSequence	BarcodeName	ProjectID	StudyID	DateSequenced	RunName	HostSpecies	SampleType	Control RCBarcodeSequence	ReversePrimerSequence	WellPosition	PCRcycles	DNAconc(ng/ul)	Description'
+colhds = '#SampleID	BarcodeSequence	LinkerPrimerSequence	BarcodeName	ProjectID	StudyID	DateSequenced	RunName	HostSpecies	SampleType	Control	RCBarcodeSequence	ReversePrimerSequence	WellPosition	PCRcycles	DNAconc(ng/ul)	Description'
 
 m = excel+miseq+txt
 d = gen+miseq+txt
