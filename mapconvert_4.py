@@ -1,7 +1,7 @@
 #author: Joseph Horwinski
 #start date: 8/11/2014
 #Reorganizes the old GitHub format Miseq V1V3 (runs 9-12) mapping files to be inline with the
-#now standardized 17 column github format.
+#now standardized 17 column github format. Replaces "1" wtih "001" and "10" with "010" in study ID. Must be manually overridden for miseg9 which requires an additional "0"
 
 miseq=raw_input('Enter MiSeqV1V3 Number (ex. 01):')
 sd=raw_input('Enter sequencing date (ex. 2014-01-27):')
@@ -12,10 +12,23 @@ tsv = '-NO-REG-NUM.tsv'
 txt = '.txt'
 run = 'MiSeqV1V3_'
 colhds = '#SampleID	BarcodeSequence	LinkerPrimerSequence	BarcodeName	ProjectID	StudyID	DateSequenced	RunName	HostSpecies	SampleType	Control	RCBarcodeSequence	ReversePrimerSequence	WellPosition	PCRcycles	DNAconc(ng/ul)	Description'
+tab = '	'
+oo = '0'
 
 m = git+miseq+tsv
 d = gen+miseq+txt
 rn = run+miseq
+rnno0 = str(int(miseq))
+rntab = tab+rnno0+tab
+rnw0s = tab+oo+rnno0+tab
+
+mapfi = open(m, "rb").read()
+updated = mapfi.replace('	1	', '	001	')
+updated = updated.replace(rntab, rnw0s)
+if updated != mapfi:
+	f = open(m, "wb")
+	f.write(updated)
+	f.close()
 
 mapfi = open(m, "rb").read()
 updated = mapfi.replace("\r", "\n")
