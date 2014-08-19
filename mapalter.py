@@ -11,14 +11,12 @@ v='MiSeqV1V3_'
 #miseq=raw_input('Enter MiSeq Number (ex. 01):')
 #v='MiSeq_'
 
-txt = '.txt'
-
-'/Documents/Club_Grice/mapping_files/run_maps/MiSeq_01.txt'
+tsv = '.tsv'
 
 doc = '/Users/gricelab/Documents/Club_Grice/mapping_files/run_maps/'
 #doc = '/Users/gricelab/Documents/Joseph/mapping_file_conversion/Generated/'
 
-m = doc+v+miseq+txt
+m = doc+v+miseq+tsv
 
 colhds = '#SampleID	BarcodeSequence	LinkerPrimerSequence	ProjectID	StudyID	DateSequenced	RunName	HostSpecies	SampleType	Control	ReversePrimerSequence	WellPosition	PCRcycles	DNAconc	Description'
 
