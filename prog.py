@@ -49,3 +49,5 @@ for line in ofile:
 		fstwrd = line[0]
 		print fstwrd
 	
+	
+	#hi Ciara
